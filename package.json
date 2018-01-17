@@ -1,0 +1,41 @@
+{
+    "name": "openapi-viewer",
+    "displayName": "openapi-viewer",
+    "description": "Viewer documentation for a OpenAPI Specification",
+    "version": "0.0.1",
+    "publisher": "openapi-viewer",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.previewInSide"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.previewInSide",
+                "title": "OpenAPI: Preview"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "js-yaml": "^3.10.0",
+        "nunjucks": "^3.0.1",
+        "request": "^2.83.0"
+    }
+}
