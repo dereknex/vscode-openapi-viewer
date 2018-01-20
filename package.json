@@ -3,7 +3,7 @@
     "displayName": "openapi-viewer",
     "description": "Viewer documentation for a OpenAPI Specification",
     "version": "0.0.2",
-    "publisher": "derek",
+    "publisher": "derek-nextty",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/dereknex/vscode-openapi-viewer"
