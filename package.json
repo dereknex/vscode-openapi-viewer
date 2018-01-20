@@ -2,7 +2,8 @@
     "name": "openapi-viewer",
     "displayName": "openapi-viewer",
     "description": "Viewer documentation for a OpenAPI Specification",
-    "version": "0.0.2",
+    "icon": "https://raw.githubusercontent.com/dereknex/vscode-openapi-viewer/master/images/icon.png",
+    "version": "0.0.3",
     "publisher": "derek-nextty",
     "repository": {
         "type": "git",
