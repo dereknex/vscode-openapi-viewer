@@ -5,6 +5,7 @@ const DocumentRender = require('./render');
 // this method is called when your extension is activated your extension is
 // activated the very first time the command is executed
 function activate(context) {
+    console.log("openapi view activate");
     // let textDocumentContentProvider = new
     // TextDocumentContentProvider(context.extensionPath +
     // "/swagger-ui/index.html"); The command has been defined in the package.json
@@ -24,6 +25,7 @@ function activate(context) {
                 .document
                 .getText();
             let uri = render.render(editor.document.fileName, text);
+            vscode.window.showErrorMessage(uri);
             vscode
                 .commands
                 .executeCommand('vscode.previewHtml', uri , vscode.ViewColumn.Two, "OpenAPI Preview")

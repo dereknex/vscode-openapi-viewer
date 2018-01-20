@@ -22,11 +22,16 @@ module.exports = class DocumentRender{
             return "";
         }
         let swaggerUIPath = this.context.extensionPath + "/swagger-ui";
-        let template = this.context.extensionPath + "/swagger-ui/index.njk";
         let destFile = this.context.extensionPath + "/swagger-ui/index.htm";
-        
-        let res = nunjucks.render(template, {swaggerUIPath: swaggerUIPath, content: content});
-        fs.writeFileSync(destFile, res);
-        return vscode.Uri.parse('file://' + destFile);
+        try {
+            nunjucks.configure(swaggerUIPath);
+            let res = nunjucks.render("index.njk", {swaggerUIPath: swaggerUIPath, content: content});
+            fs.writeFileSync(destFile, res);
+            return vscode.Uri.parse('file://' + destFile);
+        } catch (error) {
+            console.error(error);
+        }
+        return "";
+       
     }
 }

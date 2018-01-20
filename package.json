@@ -2,8 +2,25 @@
     "name": "openapi-viewer",
     "displayName": "openapi-viewer",
     "description": "Viewer documentation for a OpenAPI Specification",
-    "version": "0.0.1",
-    "publisher": "openapi-viewer",
+    "version": "0.0.2",
+    "publisher": "derek",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dereknex/vscode-openapi-viewer"
+    },
+    "keywords": [
+        "Swagger",
+        "OpenAPI",
+        "Preview",
+        "Documentation",
+        "SwaggerPreview"
+    ],
+    "author": "Derek Chen",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dereknex/vscode-openapi-viewer/issues"
+    },
+    "homepage": "https://github.com/dereknex/vscode-openapi-viewer#readme",
     "engines": {
         "vscode": "^1.19.0"
     },
@@ -23,6 +40,7 @@
         ]
     },
     "scripts": {
+        "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
     },
