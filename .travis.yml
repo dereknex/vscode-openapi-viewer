@@ -6,6 +6,8 @@ jobs:
     - stage: install
       before_script:
         - npm install
+      script:
+        - npm test --silent
     - stage: deploy
       if: tag IS present
       before_install:
