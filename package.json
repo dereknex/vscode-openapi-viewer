@@ -3,7 +3,7 @@
     "displayName": "openapi-viewer",
     "description": "Viewer documentation for a OpenAPI Specification",
     "icon": "images/icon.png",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "publisher": "derek-nextty",
     "repository": {
         "type": "git",
