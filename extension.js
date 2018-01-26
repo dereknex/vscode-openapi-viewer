@@ -4,37 +4,43 @@ const vscode = require('vscode');
 const DocumentRender = require('./render');
 // this method is called when your extension is activated your extension is
 // activated the very first time the command is executed
-function activate(context) {
-    console.log("openapi view activate");
-    // let textDocumentContentProvider = new
-    // TextDocumentContentProvider(context.extensionPath +
-    // "/swagger-ui/index.html"); The command has been defined in the package.json
-    // file Now provide the implementation of the command with  registerCommand The
-    // commandId parameter must match the command field in package.json
+
+function preview(context) {
     let render = new DocumentRender(context);
+    var editor = vscode.window.activeTextEditor;
+    if (!editor) {
+        return;
+    }
+
+    let text = editor
+        .document
+        .getText();
+    let uri = render.render(editor.document.fileName, text);
+    vscode.window.showErrorMessage(uri);
+    vscode
+        .commands
+        .executeCommand('vscode.previewHtml', uri , vscode.ViewColumn.Two, "OpenAPI Preview")
+        .then(null, reason => {
+            vscode
+                .window
+                .showErrorMessage(reason);
+        });
+}
+
+function activate(context) {
+    // console.log("openapi view activate");
+    
     let disposable = vscode
         .commands
         .registerCommand('extension.previewInSide', function () {
-            // The code you place here will be executed every time your command is executed
-            var editor = vscode.window.activeTextEditor;
-            if (!editor) {
-                return; // No open text editor
-            }
-
-            let text = editor
-                .document
-                .getText();
-            let uri = render.render(editor.document.fileName, text);
-            vscode.window.showErrorMessage(uri);
-            vscode
-                .commands
-                .executeCommand('vscode.previewHtml', uri , vscode.ViewColumn.Two, "OpenAPI Preview")
-                .then(null, reason => {
-                    vscode
-                        .window
-                        .showErrorMessage(reason);
-                });
+            preview(context);
+            vscode.workspace.onDidSaveTextDocument((event) => {
+                if (event.fileName == vscode.window.activeTextEditor.document.fileName) {
+                    preview(context);
+                }
+            });
         });
+    
     context
         .subscriptions
         .push(disposable);

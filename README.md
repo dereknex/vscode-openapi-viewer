@@ -1,5 +1,7 @@
 # OpenAPI Doc Viewer
 
+[![Build Status](https://travis-ci.org/dereknex/vscode-openapi-viewer.svg?branch=master)](https://travis-ci.org/dereknex/vscode-openapi-viewer)
+
 Viewer documentation for a [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) 
 
 > *This project is still a work in progress.*
