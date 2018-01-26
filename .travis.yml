@@ -12,7 +12,7 @@ jobs:
     if: tag IS present
     before_install:
     - npm install -g vsce
-    script: vsce publish -p $personal-access-token
+    script: vsce publish -p ${personal-access-token}
 env:
   global:
     secure: SZpIXPQGzWaxP5r6jLetJbb3Q+yZZwa6Qlv+u4UDJHVMKWDg/DvWHkh/8OrMSu/pwMaUbstZmlmpAea0BkfQ+NJGZC43FTpfz/xSb13CAaRBUSmkdm4SvD6VsdpW5CmmdoD+xdSKnFdocZMg3LTB0tSSGS3fuCQdcCNVWu0StbNgUD2b0TjCs+bEoXeTLUvtcjSq96ExTMd7ArFvJUhQi96OfGZySwoyyVwHKBHzokJxrS/yhni1Z/fO3X/usLcZC6rCtdT16VYgl+T9pZ1rC/4R/4FM7x/kt68ZD9XMhPeU+l8D4jarCUw9zr5J/n/ChseHMrsrIcVm663tz1wPsl2TXaHpWMJKSAzQy3L/5uTMtRR6/NxeToHHNSZ3MQS6QDjpq86iBT2bbgKkAlPEIJyR44HA6REVVSwnP/WSM2SS4N1BCU7BYiJf0GoBCLA6MwqJMrkqz6gYaL/O8jIh30ktaN2ndq6T0bGppxeqMcTBhM0JRRwlVZ3Rxm4XySK6liNmtQUfIooxBBa3giXqy7nG+3ql4wWvAzrXq3ouHwCeeOsFRBVeim4f41V9nD7RzjfZ7nmIpAVdc9qDXiWKQJPvRYG8Pig7gRWTFPczNpQPp6LWTT3oyzG7pBoF+ljBkMlQQBUQ/77WTGx0Ja0GSgG1o89+5QuhXNBADKp2Bls=
