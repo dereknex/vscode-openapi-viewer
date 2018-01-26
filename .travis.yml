@@ -7,13 +7,12 @@ jobs:
   include:
   - stage: build
     install:
-    - npm install
-    script:
-    - echo "Ingore tests"
+    - npm install --no-optional
+    - npm dedupe
+    script: true
   - stage: deploy
     if: tag IS present
-    install:
-    - npm install vsce
+    install: true
     script: vsce publish -p ${personal-access-token}
 env:
   global:
