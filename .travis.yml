@@ -3,15 +3,15 @@ node_js:
 - '8'
 jobs:
   include:
-  - stage: install
-    before_script:
+  - stage: build
+    install:
     - npm install
     script:
     - echo "Ingore tests"
   - stage: deploy
     if: tag IS present
-    before_install:
-    - npm install -g vsce
+    install:
+    - npm install vsce
     script: vsce publish -p $personal-access-token
 env:
   global:
