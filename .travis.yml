@@ -1,18 +1,18 @@
 language: node_js
 node_js:
 - '8'
+cache: node_modules
 jobs:
   include:
-  - stage: install
-    before_script:
-    - npm install
-    script:
-    - echo "Ingore tests"
+  - stage: build
+    install:
+    - npm install --no-optional
+    - npm dedupe
+    script: true
   - stage: deploy
     if: tag IS present
-    before_install:
-    - npm install -g vsce
+    install: true
     script: vsce publish -p ${personal-access-token}
 env:
   global:
-    secure: SZpIXPQGzWaxP5r6jLetJbb3Q+yZZwa6Qlv+u4UDJHVMKWDg/DvWHkh/8OrMSu/pwMaUbstZmlmpAea0BkfQ+NJGZC43FTpfz/xSb13CAaRBUSmkdm4SvD6VsdpW5CmmdoD+xdSKnFdocZMg3LTB0tSSGS3fuCQdcCNVWu0StbNgUD2b0TjCs+bEoXeTLUvtcjSq96ExTMd7ArFvJUhQi96OfGZySwoyyVwHKBHzokJxrS/yhni1Z/fO3X/usLcZC6rCtdT16VYgl+T9pZ1rC/4R/4FM7x/kt68ZD9XMhPeU+l8D4jarCUw9zr5J/n/ChseHMrsrIcVm663tz1wPsl2TXaHpWMJKSAzQy3L/5uTMtRR6/NxeToHHNSZ3MQS6QDjpq86iBT2bbgKkAlPEIJyR44HA6REVVSwnP/WSM2SS4N1BCU7BYiJf0GoBCLA6MwqJMrkqz6gYaL/O8jIh30ktaN2ndq6T0bGppxeqMcTBhM0JRRwlVZ3Rxm4XySK6liNmtQUfIooxBBa3giXqy7nG+3ql4wWvAzrXq3ouHwCeeOsFRBVeim4f41V9nD7RzjfZ7nmIpAVdc9qDXiWKQJPvRYG8Pig7gRWTFPczNpQPp6LWTT3oyzG7pBoF+ljBkMlQQBUQ/77WTGx0Ja0GSgG1o89+5QuhXNBADKp2Bls=
+    secure: AjgVd/y6PL4YkDEF/ksMKSJAbJ4lwOggifhqiP057GRj0yDufK9GTkSvCcHqoHDugeto4jFSy1GRG61WPoY+rz9h7b7LqOoiaiViLuIJRBDCC8BEVb6veoK2M3ewk1Svs5oSYsQW95ErTDeTZaPhEVNTUIfT/mpqhGNVG0XlmUkYckGlY86sYnXARHWjaMhS3Mk6uEM7P/yivzAF6ofr+yTnCn+hW1bE60mndGdmDdThREzR9KOd4IJijgAWy8Ad4PLayTk6mn0yvV9Cvq2cXXOH1Ur/0DiDA0qNrKSMPRZnvaxIUneOQY7myL7MgLGcTU4W7hmX+R4+a7yB1wOl0pRUHbVVgLBKhycSm6Q1UafEEMN7Qqj6MLTlXbxt11X8PyKvuSBc/muT2RAomih20feHALi1OY9QX3jOgUPeBXBjLSzPkp6mbir9pPRWD7wCMC3mab/uGV0eX1MYKyVVKpfL6wh6lYnwedKXF77B1GvDlehKaBU2DtRk5iXgOnKMIWSNZEznpLCmYqYlIca+P9ahzi8Vfxt918gMDhkKi8B8hSGDJgabk5DxFkvtpR46JxMAPvAldugWpb5VUPruTX8aOKHOjO9ygbnNdjMuqHEhEufkEpwBvxr0tnOaIYs2An34KWUuTjRInvCvTDndZki9IlyHuWbkXGsbtAaL80o=
