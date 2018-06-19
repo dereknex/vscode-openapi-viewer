@@ -4,7 +4,7 @@ const vscode = require('vscode');
 const DocumentRender = require('./render');
 // this method is called when your extension is activated your extension is
 // activated the very first time the command is executed
-
+const support_exts =  ["json", "yml", "yaml"];
 function preview(context) {
     let render = new DocumentRender(context);
     var editor = vscode.window.activeTextEditor;
@@ -35,7 +35,7 @@ function activate(context) {
         .registerCommand('extension.previewInSide', function () {
             preview(context);
             vscode.workspace.onDidSaveTextDocument((event) => {
-                if (event.fileName == vscode.window.activeTextEditor.document.fileName) {
+                if (support_exts.indexOf(event.fileName.split('.').pop()) > -1){
                     preview(context);
                 }
             });
