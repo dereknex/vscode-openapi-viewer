@@ -15,6 +15,3 @@ jobs:
     - npm install --no-optional
     - npm dedupe
     script: vsce publish -p ${personal-access-token}
-env:
-  global:
-  - secure: TM5wgNavDPAhv6/uXbrJ0cRuSyqK+SQAHYMaFTHmXdMOzpxiwFf9smRh+GmhgLn2ny3UJagUXCaK9Q9FjUF5qYgBCg1d+8BYK4iAQGpXQQmY/T/mgeKiLW4eU5upDtPp9w3EArVOVl4sXcHtFUKbiADIY3D7c5MftjbqJO43y+428IP2ITas4rLVpJnS+AeiKb/AkTabzgYGBtLLVJ+9tsXMDChxYWfOtUSglsNf01mNYZipqLeTf1H0/kcw2jXuXWTCQkGL/Bf9dY7TR8SgaoZt7sVAA0XnkSghridzOTwNO7qzANdkRcEJCvYOrkkP2Ei4kb5S3BAHX2Ax97MaHl7ExMC63fci5q5gwJ63Q+5T45MRW35/z1IH58tw9KQrzAEDmQggxNqHm5DYDKw5ebSLcPRRnkXgy5ypGdbNenaRQPnglheGB4b7JYCu73/I0x45WUyRUAxW680Uw464zVEw+Ojo784nImcNzATXXz6NAyhS9vRJM3kDNyCoTD1oHxlcDFWixoWGSQOuPJDp2BAskcrWY4MQllYdJxsWc9+CafpInc+OI7jCE/VQPK+GPweaGQIo4vN5DaBNhXDx1T3U5FsqZ0nJi09FXv9eL5WTW7cAdVHuS5FSGn/BDv+TzD7tR/oUP3gZJ6bVif56xBbQz1j7y1MYpts3iTrGp+0=
