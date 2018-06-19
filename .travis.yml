@@ -14,4 +14,4 @@ jobs:
     install:
     - npm install --no-optional
     - npm dedupe
-    script: vsce publish -p "${personal-access-token}"
+    script: vsce publish -p $VSCE_TOKEN
