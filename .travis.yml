@@ -11,7 +11,9 @@ jobs:
     script: true
   - stage: deploy
     if: tag IS present
-    install: true
+    install: 
+      - npm install --no-optional
+      - npm dedupe
     script: vsce publish -p ${personal-access-token}
 env:
   global:
