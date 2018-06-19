@@ -11,10 +11,10 @@ jobs:
     script: true
   - stage: deploy
     if: tag IS present
-    install: 
-      - npm install --no-optional
-      - npm dedupe
+    install:
+    - npm install --no-optional
+    - npm dedupe
     script: vsce publish -p ${personal-access-token}
 env:
   global:
-    secure: AjgVd/y6PL4YkDEF/ksMKSJAbJ4lwOggifhqiP057GRj0yDufK9GTkSvCcHqoHDugeto4jFSy1GRG61WPoY+rz9h7b7LqOoiaiViLuIJRBDCC8BEVb6veoK2M3ewk1Svs5oSYsQW95ErTDeTZaPhEVNTUIfT/mpqhGNVG0XlmUkYckGlY86sYnXARHWjaMhS3Mk6uEM7P/yivzAF6ofr+yTnCn+hW1bE60mndGdmDdThREzR9KOd4IJijgAWy8Ad4PLayTk6mn0yvV9Cvq2cXXOH1Ur/0DiDA0qNrKSMPRZnvaxIUneOQY7myL7MgLGcTU4W7hmX+R4+a7yB1wOl0pRUHbVVgLBKhycSm6Q1UafEEMN7Qqj6MLTlXbxt11X8PyKvuSBc/muT2RAomih20feHALi1OY9QX3jOgUPeBXBjLSzPkp6mbir9pPRWD7wCMC3mab/uGV0eX1MYKyVVKpfL6wh6lYnwedKXF77B1GvDlehKaBU2DtRk5iXgOnKMIWSNZEznpLCmYqYlIca+P9ahzi8Vfxt918gMDhkKi8B8hSGDJgabk5DxFkvtpR46JxMAPvAldugWpb5VUPruTX8aOKHOjO9ygbnNdjMuqHEhEufkEpwBvxr0tnOaIYs2An34KWUuTjRInvCvTDndZki9IlyHuWbkXGsbtAaL80o=
+  - secure: ghDCNfykJWdf2AlNz+XRQKGzpJAFFYEEAA8wZahvsUtPSvjUJb88lrcjnwKpujknPy+8ESa2yBb545ZNMUx0oKb/6vzGIP6n18g6m+iCvSbeyBSTsugDIA4Cgjw8k8ffenZrGVNQ09TSi96NwlkpS3enhPJSFfFg+/B1Wt8KeNnXk3aZB7IjHrBqwa5f9kl5qiifbBrCRxE9ACSlJ7ZmjTvmBMgkH43uI4vK7oFKBP+i4qhct549vY42MVUrYC/jzy3r9CAMpbAGcsO7JAirLZcO5M52QYnb7pTZtbaoFp10ivUV85Nf/TWVizhadNs4VeZnsYS1iAHbt+iNgl/xLivskyXcDPmB6xmWDbJTmRNvOdFQ2r+MqWb5UnQ8fVLZIguNHiMNlmuG6eEppzjdfg40YA7w7L6TsDe6j56JXyxudIz93EGnoqkYckVW+tgbaOQGM0/QJzkP5WDraOyHKEBgwYIowWAdVjJiv5AHrmuppoLYEwtFOWu0Z9NbZdlWbiiHiGcFeig0IIDR4UspXZqabLmGDJ4moY5yNQqdGSAt2/H4E+1aGCZnP5qLgF0gXwRmMS2NyZo96rciESBxq4xcAzKVQ7nlWDSpzeFPf8YAy1ge0Oqs6p8kcT4bUOa0nTkldY94bm57veMx6zd4Rwuv/dqxmxGV/Su4vIJNUxs=
