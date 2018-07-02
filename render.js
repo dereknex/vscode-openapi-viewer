@@ -27,6 +27,13 @@ module.exports = class DocumentRender{
             nunjucks.configure(swaggerUIPath);
             let res = nunjucks.render("index.njk", {swaggerUIPath: swaggerUIPath, content: content});
             fs.writeFileSync(destFile, res);
+
+            // Turn windows file paths into a URI path:
+            destFile = destFile.replace(/\\/g, "/");
+            if (destFile[0] !== "/") {
+                destFile = "/" + destFile;
+            }
+
             return vscode.Uri.parse('file://' + destFile);
         } catch (error) {
             console.error(error);
