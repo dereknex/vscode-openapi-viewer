@@ -23,7 +23,7 @@
     },
     "homepage": "https://github.com/dereknex/vscode-openapi-viewer#readme",
     "engines": {
-        "vscode": "^1.19.0"
+        "vscode": "^1.37.0"
     },
     "categories": [
         "Other"
@@ -47,11 +47,12 @@
     },
     "devDependencies": {
         "@types/mocha": "^2.2.48",
-        "@types/node": "^7.0.65",
+        "@types/node": "^7.10.9",
         "eslint": "^4.19.1",
-        "typescript": "^2.8.3",
-        "vsce": "^1.36.1",
-        "vscode": "^1.1.36"
+        "typescript": "^2.9.2",
+        "vsce": "^1.74.0",
+        "vscode": "^1.1.36",
+        "mocha": "^7.1.1"
     },
     "dependencies": {
         "js-yaml": "^3.11.0",
